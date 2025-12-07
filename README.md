@@ -5,54 +5,50 @@ This project is an advanced **driver drowsiness monitoring system** that uses co
 
 ---
 
-## 🚗 Features
+🎯 Features
+Core Detection Capabilities
 
-### 🔹 Real-Time Eye Closure Detection (EAR)
-Identifies prolonged eye closure using the Eye Aspect Ratio. Alerts the driver when sleepiness is detected.
+Eye Aspect Ratio (EAR) - Detects eye closure and blink patterns
+Mouth Aspect Ratio (MAR) - Identifies yawning behavior
+Head Pose Estimation - Monitors head tilt angle for drowsiness signs
 
-### 🔹 Yawn Detection (MAR)
-Monitors mouth opening behavior and detects yawns, a major sign of fatigue.
+Enhanced Alert System
 
-### 🔹 3D Head Pose Detection
-Uses 6 facial landmarks to compute head tilt angle. Warns the user when looking down or away from the road.
+✅ Smart Alert Management - Prevents excessive/continuous beeping
+✅ State Change Detection - Alerts only on new drowsiness events
+✅ Configurable Cooldown Timers - Customizable alert frequencies
+✅ Voice Warnings - Natural human voice alerts using Windows SAPI/pyttsx3
+✅ SMS Notifications - Sends SMS alert on first drowsiness detection
+✅ Visual Indicators - Real-time on-screen warnings
 
-### 🔹 Human-Like Voice Alerts
-Uses Windows SAPI or pyttsx3 to speak:
-- **"Eyes closed"**  
-- **"Yawn detected"**  
-- **"Please keep head straight"**
+Data Logging & Analysis
 
-### 🔹 SMS Alert System (Twilio)
-Automatically sends an SMS on the first detected drowsiness event. Useful for:
-- Fleet management  
-- Parental monitoring  
-- Safety supervisors  
+📊 Timestamped event logging (CSV format)
+📝 Unique log file per session
+📈 Records EAR, MAR, and head tilt values
+🕐 Real-time date and time stamps
 
-### 🔹 Per-Run Logging System
-Each run creates a timestamped CSV log file containing:
-- Event type  
-- Timestamp  
-- EAR / MAR / Tilt values  
+🎬 Demo
+Detection in Action
+The system monitors three key indicators:
 
-### 🔹 Cooldown + State Change Logic
-Prevents repetitive alerts while maintaining fast, accurate responses.
+Eyes Closed Detection
 
----
+Triggers when Eye Aspect Ratio < 0.25 for 3+ consecutive frames
+Voice Alert: "Eyes closed"
 
-## 🛠 Technologies Used
-- **Python 3.6**
-- **OpenCV**
-- **Dlib (68-point landmark model)**
-- **NumPy**
-- **Twilio API**
-- **pyttsx3 / win32com (TTS)**
-- **Threading**
 
----
+Yawn Detection
 
-## 📦 Installation
+Triggers when Mouth Aspect Ratio > 0.79
+Voice Alert: "Yawn detected"
 
-### 1. Clone the Repository
-```sh
-git clone https://github.com/your-username/Driver-Drowsiness-Detection.git
-cd Driver-Drowsiness-Detection
+
+Head Tilt Warning
+
+Triggers when head angle exceeds 30 degrees
+Voice Alert: "Please keep head straight"
+
+
+
+
