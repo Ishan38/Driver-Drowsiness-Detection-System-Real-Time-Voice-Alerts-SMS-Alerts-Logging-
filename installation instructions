@@ -1,0 +1,68 @@
+🛠️ Installation
+Prerequisites
+
+Python 3.7 or higher
+Webcam
+Windows OS (for voice alerts)
+
+Step 1: Clone the Repository
+bashgit clone https://github.com/yourusername/Driver-Drowsiness-Detection.git
+cd Driver-Drowsiness-Detection
+Step 2: Install Dependencies
+bashpip install -r requirements.txt
+Step 3: Download Facial Landmark Predictor
+Download the pre-trained facial landmark detector:
+
+File: shape_predictor_68_face_landmarks.dat
+Link: Download from dlib
+Extract and place in ./dlib_shape_predictor/ folder
+
+Step 4: Configure SMS Alerts (Optional)
+Get Free Twilio Account
+
+Sign up at Twilio
+Get your credentials from the Twilio Console:
+
+Account SID
+Auth Token
+Twilio Phone Number
+
+
+
+Update Configuration
+Edit the configuration section in the Python file:
+python# SMS ALERT CONFIGURATION
+ENABLE_SMS_ALERT = True
+PHONE_NUMBER = "+919876543210"  # Your phone number with country code
+
+# Twilio Credentials
+TWILIO_ACCOUNT_SID = "ACxxxxxxxxxxxxx"
+TWILIO_AUTH_TOKEN = "your_auth_token_here"
+TWILIO_PHONE_NUMBER = "+1234567890"
+🚀 Usage
+Run the System
+bashpython "Driver Drowsiness Detection.py"
+Configuration Options
+The system provides several configurable parameters:
+python# Alert Cooldown Timers (in seconds)
+EYE_COOLDOWN = 5        # Wait time before next eye closure alert
+YAWN_COOLDOWN = 8       # Wait time before next yawn alert
+HEAD_TILT_COOLDOWN = 4  # Wait time before next head tilt alert
+
+# Alert Mode Selection
+USE_STATE_CHANGE_DETECTION = True  # True: Alert on state change only
+                                   # False: Use cooldown timers
+
+# Voice Warnings
+USE_VOICE_WARNINGS = True  # True: Voice alerts
+                          # False: Beep sounds
+
+# SMS Alerts
+ENABLE_SMS_ALERT = True  # True: Enable SMS on first warning
+                        # False: Disable SMS
+Threshold Configuration
+You can adjust detection sensitivity:
+pythonEYE_AR_THRESH = 0.25           # Eye Aspect Ratio threshold
+MOUTH_AR_THRESH = 0.79         # Mouth Aspect Ratio threshold
+EYE_AR_CONSEC_FRAMES = 3       # Consecutive frames for eye closure
+HEAD_TILT_THRESH = 30          # Head tilt a
