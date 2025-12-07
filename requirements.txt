@@ -1,0 +1,10 @@
+numpy==1.19.5
+scipy==1.5.4
+opencv-python==4.5.5.64
+imutils==0.5.4
+dlib==19.22.1
+playsound==1.2.2
+pyttsx3==2.90
+pywin32==301
+twilio==7.10.0
+threadpoolctl==2.1.0
