@@ -1,0 +1,10 @@
+Timestamp,Event,Value
+2025-12-08 01:42:01,Program Started,-
+2025-12-08 01:42:19,Eyes Closed,0.161
+2025-12-08 01:42:22,SMS Alert Sent,Eyes Closed
+2025-12-08 01:42:25,Eyes Closed,0.184
+2025-12-08 01:42:26,Eyes Closed,0.139
+2025-12-08 01:42:27,Eyes Closed,0.159
+2025-12-08 01:42:28,Yawning,0.825
+2025-12-08 01:42:29,Eyes Closed,0.123
+2025-12-08 01:42:54,Eyes Closed,0.224
